@@ -22,6 +22,26 @@ function showSection(activateSection){
     activateSection.classList.add('active');
 }
 
+function createLessonDate(after){
+    const lessonDate = document.querySelector('.lessonDateTemplate');
+    const clone = lessonDate.cloneNode(true);
+    const date = clone.querySelector('[type="date"]');
+    date.value = '';
+    const createButton = clone.querySelector('.createLessonDate');
+    clone.classList.remove('lessonDateTemplate');
+    const lessonData = document.getElementById('lessonData');
+    if (after && after.nextSibling){
+        lessonData.insertBefore(clone, after.nextSibling)
+    } else {
+        lessonData.appendChild(clone);
+    }
+    createButton.onclick = (e) => {createLessonDate(clone)};
+}
+createLessonDate();
+
+const buttonCreateLessonDate = document.getElementById('createLessonDate');
+
+
 
 
 

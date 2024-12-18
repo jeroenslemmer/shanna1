@@ -1,4 +1,4 @@
-section {
+section, .lessonDateTemplate {
     display: none;
 }
 
@@ -7,7 +7,8 @@ section.active {
 }
 
 @media print {
-    .buttons {
+    .buttons, h1 {
         display: none;
     }
+
 }

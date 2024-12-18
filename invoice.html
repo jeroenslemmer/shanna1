@@ -15,10 +15,13 @@
                 <option value="1">Main Music School</option>
                 <option value="2">Zangschool Utrecht</option>
             </select></p>
+            <div id="lessonData">
+            </div>
             <!-- wijzig tarief -->
             <!-- lesdata -->
                 <!-- lesdatum -->
                     <!-- BTW-groep / lestotaal (minuten) / lesuren / -->
+
             <!-- wijzig factuurtekst -->
 
             <p class="buttons"><button class="showInvoice">Toon factuur</button><button class="showSpecs">Toon specificaties</button></p>
@@ -26,13 +29,22 @@
         <section id="sectionInvoice">
             <p class="buttons"><button class="printPage">Print factuur</button><button class="showSpecs">Toon Specificaties</button><button class="showInput">Naar invoer</button></p>
             <h1>Factuur</h1>
+            div
+           
             <!-- factuur layout-->
         </section>
         <section id="sectionSpecs">
             <p class="buttons"><button class="printPage">Print Specs</button><button class="showInvoice">Toon Factuur</button><button class="showInput">Naar invoer</button></p>
             <h1>Specificaties</h1>
+            specificaties
             <!-- specs layout-->
         </section>
-        <script src="invoice.js" async defer></script>
+        <div class="lessonDateTemplate">
+            <label for="">datum: </label><input type="date"> <button class="createLessonDate">Meer...</button>
+            <label for="">vrijgesteld : </label><input type="number">
+            <label for="">les vanaf 21: </label><input type="number">
+            
+        </div>
+        <script src="invoice.js" ></script>
     </body>
 </html>
