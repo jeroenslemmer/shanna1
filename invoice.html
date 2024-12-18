@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Factuur maken</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="invoice.css">
+    </head>
+    <body>
+        <section id="sectionInput" class="active">
+            <h1>Invoer lessen</h1>
+            <p><label for="clientId">Klant: </label><select name="clientId" id="clientId">
+                <option value="1">Main Music School</option>
+                <option value="2">Zangschool Utrecht</option>
+            </select></p>
+            <!-- wijzig tarief -->
+            <!-- lesdata -->
+                <!-- lesdatum -->
+                    <!-- BTW-groep / lestotaal (minuten) / lesuren / -->
+            <!-- wijzig factuurtekst -->
+
+            <p class="buttons"><button class="showInvoice">Toon factuur</button><button class="showSpecs">Toon specificaties</button></p>
+        </section>
+        <section id="sectionInvoice">
+            <p class="buttons"><button class="printPage">Print factuur</button><button class="showSpecs">Toon Specificaties</button><button class="showInput">Naar invoer</button></p>
+            <h1>Factuur</h1>
+            <!-- factuur layout-->
+        </section>
+        <section id="sectionSpecs">
+            <p class="buttons"><button class="printPage">Print Specs</button><button class="showInvoice">Toon Factuur</button><button class="showInput">Naar invoer</button></p>
+            <h1>Specificaties</h1>
+            <!-- specs layout-->
+        </section>
+        <script src="invoice.js" async defer></script>
+    </body>
+</html>

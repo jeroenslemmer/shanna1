@@ -1,0 +1,13 @@
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+@media print {
+    .buttons {
+        display: none;
+    }
+}
