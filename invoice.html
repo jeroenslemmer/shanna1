@@ -10,7 +10,7 @@
     </head>
     <body>
         <section id="sectionInput" class="active">
-            <h1>Invoer lessen</h1>
+            <h1>Invoer lessen en services</h1>
             <p><label for="clientId">Klant: </label><select name="clientId" id="clientId">
                 <option value="1">Main Music School</option>
                 <option value="2">Zangschool Utrecht</option>
@@ -40,10 +40,23 @@
             <!-- specs layout-->
         </section>
         <div class="lessonDateTemplate">
-            <label for="">datum: </label><input type="date"> <button class="createLessonDate">Meer...</button>
-            <label for="">vrijgesteld : </label><input type="number">
-            <label for="">les vanaf 21: </label><input type="number">
-            
+            <label for="">datum: </label><input type="date"> <button class="createLessonDate">Voeg datum toe</button>
+            <p>
+                <label for="">lesminuten vrijgesteld : </label><input class="int" maxlength="3">&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="">vanaf 21 jaar: </label><input class="int" maxlength="3">      
+            </p>
+            <button class="createService">Voeg service toe</button> 
+            <p class="services"></p>
+        </div>
+        <div class="serviceTemplate">
+            <label for="">Service: </label><input type="text">
+            <label for="">BTW: </label>
+            <select>
+                <option value="1">21%</option>
+                <option value="1">9%</option>
+                <option value="1">0%</option>
+            </select>
+            <button class="removeService">Verwijder</button> 
         </div>
         <script src="invoice.js" ></script>
     </body>

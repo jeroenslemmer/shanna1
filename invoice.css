@@ -1,9 +1,40 @@
-section, .lessonDateTemplate {
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+section, .lessonDateTemplate, .serviceTemplate {
     display: none;
 }
 
 section.active {
     display: block;
+}
+
+.lessonDate {
+    margin-bottom: 5px;
+    padding: 3px;
+    background-color: #efe;
+    border: 1px solid #ded;
+    font-size: 0.9em;
+}
+
+.service {
+    margin-bottom: 5px;
+    padding: 3px;
+    background-color: #fee;
+    border: 1px solid #edd;
+    font-size: 0.9em;  
+}
+.service input[type="text"]{
+    width: 400px;
+}
+
+.lessonDate>p {
+    margin:3px 0 0 0;
+}
+
+.lessonDate .int {
+    width: 40px;
 }
 
 @media print {
