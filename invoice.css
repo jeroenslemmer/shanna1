@@ -10,6 +10,11 @@ section.active {
     display: block;
 }
 
+.hours {
+    border: lightgray 1px solid;
+    padding: 2px;
+}
+
 .lessonDate {
     margin-bottom: 5px;
     padding: 3px;
@@ -35,6 +40,10 @@ section.active {
 
 .lessonDate .int {
     width: 40px;
+}
+
+.float {
+    width: 50px;
 }
 
 @media print {
