@@ -1,61 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Factuur maken</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="invoice.css">
-    </head>
-    <body>
-        <section id="sectionInput" class="active">
-            <h1>Invoer lessen en services</h1>
-            <p><label for="clientId">Klant: </label><select name="clientId" id="clientId"></select></p>
-            <p><label for="tariff">Tarief: </label>
-                <input name="tariff" id="tariff" class="float">
-            </p>
-            <div id="lessonData">
-            </div>
-            <p class="buttons"><button class="showInvoice">Toon factuur</button><button class="showSpecs">Toon specificaties</button></p>
-        </section>
-        <section id="sectionInvoice">
-            <p class="buttons"><button class="printPage">Print factuur</button><button class="showSpecs">Toon Specificaties</button><button class="showInput">Naar invoer</button></p>
-            <h1>Factuur</h1>
-            div
-           
-            <!-- factuur layout-->
-        </section>
-        <section id="sectionSpecs">
-            <p class="buttons"><button class="printPage">Print Specs</button><button class="showInvoice">Toon Factuur</button><button class="showInput">Naar invoer</button></p>
-            <h1>Specificaties</h1>
-            specificaties
-            <!-- specs layout-->
-        </section>
-        <div class="lessonDateTemplate">
-            <label for="">datum: </label><input type="date"> <button class="createLessonDate">Voeg datum toe</button>
-            <p>
-                <span data-vat="1" class="duration">
-                    <label>onder 21: </label><input class="int minutes" maxlength="3"> <label> minuten: </label><span class="hours">...</span><label> uur</label>
-                </span>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <span data-vat="0" class="duration">
-                    <label>vanaf 21: </label><input class="int minutes" maxlength="3"> <label> minuten: </label><span class="hours">...</span><label> uur</label>  
-                </span>
-            </p>
-            <p>
-                <button class="createService">Voeg service toe</button> 
-            </p>
-            <p class="services"></p>
-        </div>
-        <div class="serviceTemplate">
-            <label for="">Service: </label><input type="text">
-            <label for="">tarief: </label><input class="float">
-            <label for="">BTW: </label>
-            <select class="vat">
-            </select>
-            <button class="removeService">Verwijder</button> 
-        </div>
-        <script src="invoice.js" ></script>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Factuur maken</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="invoice.css">
+  </head>
+  <body>
+    <section id="sectionInput" class="active">
+      <h1>Invoer lessen en services</h1>
+      <p><label for="clientId">Klant: </label><select name="clientId" id="clientId"></select></p>
+      <p><label for="tariff">Tarief: </label>
+        <input name="tariff" id="tariff" class="float">
+      </p>
+      <div id="lessonData">
+      </div>
+      <p class="buttons"><button class="showInvoice">Toon factuur</button><button class="showSpecs">Toon specificaties</button></p>
+      <h3>Totalen</h3>
+      <div id="totals">
+        <!-- totaallines: BTW group resume totaal-excl. totaal-BTW totaal-incl.-->
+
+      </div>
+      <div class="totalsContentTemplate"><span class="vat-des">BTW groep</span><span class="vat-resume">Service</span><span class="vat-excl">Totaal excl.</span><span class="vat-amount">BTW totaal</span><span class="vat-incl">Totaal incl.</span></div>
+      <button id="test">calculate</button>
+    </section>
+    <section id="sectionInvoice">
+      <p class="buttons"><button class="printPage">Print factuur</button><button class="showSpecs">Toon Specificaties</button><button class="showInput">Naar invoer</button></p>
+      <h1>Factuur</h1>
+      factuur-div
+       
+      <!-- factuur layout-->
+    </section>
+    <section id="sectionSpecs">
+      <p class="buttons"><button class="printPage">Print Specs</button><button class="showInvoice">Toon Factuur</button><button class="showInput">Naar invoer</button></p>
+      <h1>Specificaties</h1>
+      specificaties
+      <!-- specs layout-->
+    </section>
+
+    <div class="lessonDateTemplate">
+      <label for="">datum: </label><input type="date"> <button class="createLessonDate">Voeg datum toe</button>
+      <p>
+        <span data-vat="1" class="duration">
+          <label>onder 21: </label><input class="int minutes" maxlength="3"> <label> minuten: </label><span class="hours">...</span><label> uur</label>
+        </span>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <span data-vat="0" class="duration">
+          <label>vanaf 21: </label><input class="int minutes" maxlength="3"> <label> minuten: </label><span class="hours">...</span><label> uur</label>  
+        </span>
+      </p>
+      <p>
+        <button class="createService">Voeg service toe</button> 
+      </p>
+      <p class="services"></p>
+    </div>
+    <div class="serviceTemplate">
+      <label for="">Service: </label><input type="text" class="description">
+      <label for="">tarief: </label><input class="float tariff" >
+      <label for="">BTW: </label>
+      <select class="vat">
+      </select>
+      <button class="removeService">Verwijder</button> 
+    </div>
+    <script src="invoice.js" ></script>
+  </body>
 </html>
