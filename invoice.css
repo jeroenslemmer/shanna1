@@ -1,3 +1,36 @@
+#sectionInput .lessons {
+  display: none;
+}
+
+#sectionInput input[type="date"].spec {
+  display: none;
+}
+
+button.removeLessonDate {
+  display: none;
+}
+
+#sectionInput[type="school"][lumpsum="false"] button.removeLessonDate {
+  display: inline;
+}
+
+#sectionInput[type="school"][lumpsum="false"] input[type="date"].spec{
+  display: inline;
+}
+
+#sectionInput[type="school"] .lessons {
+  display: block;
+}
+
+#sectionInput[type="school"][lumpsum="true"] button.createLessonDate {
+    display: none;
+}
+
+#sectionInput[type="school"][specified="true"] button.createLessonDate {
+  display: inline;
+}
+
+
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -48,22 +81,101 @@ section.active {
 }
 
 @media print {
-  .buttons, h1 {
+  .buttons, h1, h2 {
     display: none;
   }
-
+  hr {
+    display: block;
+    border: 1px solid black; /* or any desired style */
+}
 }
 
-#totals {
+.totals {
   display: grid;
-  background-color: yellow;
-  width: 800px;
+  /* background-color: yellow; */
+  width: 1000px;
   grid-template-columns: auto auto auto auto auto;
+}
+
+.totals .hdr {
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+}
+
+#sectionInvoice {
+  width: 1000px;
+  margin: auto;
+}
+
+.invoiceHeader {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.invoiceHeaderRight {
+  margin-bottom: 20px;
+}
+
+.invoiceHeaderRight, .invoiceNr {
+  text-align: right;
+}
+
+.displayDate {
+  font-weight: bold;
+}
+
+.invoiceFooter {
+  position:fixed;
+  margin: auto;
+  width: 1000px;
+  bottom: 10px;
+  text-align: center;
+  font-size: 0.8em
 }
 
 .totalsContentTemplate {
   display: none;
 }
-.vat-excl, .vat-amount, .vat-incl {
+
+.totals .flt {
     text-align: right;
+}
+
+.totals .ftr {
+  padding-top: 10px;
+  border-top: 1px solid black;
+  text-align: right;
+}
+
+.totals .bdy {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+.service * {
+  vertical-align: top;
+}
+
+.lessons input, .lessons input+label, .lessons input+label+label {
+  display: none;
+}
+
+body[lesson-unit="minutes"] .lessons input.minutes, body[lesson-unit="minutes"] .lessons input.minutes+label,
+body[lesson-unit="minutes"] .lessons input.hours, body[lesson-unit="minutes"] .lessons input.hours+label
+{
+  display: inline;
+}
+
+body[lesson-unit="hours"] .lessons input.hours, body[lesson-unit="hours"] .lessons input.hours+label{
+  display: inline;
+}
+
+body[lesson-unit="lessons"] .lessons input.hours, body[lesson-unit="lessons"] .lessons input.hours+label+label{
+  display: inline;
+}
+
+#sectionInvoice .totals{
+  margin-top: 20px;
 }

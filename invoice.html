@@ -11,26 +11,39 @@
   <body>
     <section id="sectionInput" class="active">
       <h1>Invoer lessen en services</h1>
-      <p><label for="clientId">Klant: </label><select name="clientId" id="clientId"></select></p>
-      <p><label for="tariff">Tarief: </label>
-        <input name="tariff" id="tariff" class="float">
+      <p>
+        <label for="">Factuurnummer: </label><input type="text" id="invoiceNr">
+        <label for="">Factuurdatum: </label><input type="date" id="invoiceDate">
+      </p>
+      <p><label for="clientId">Opdrachtgever: </label><select name="clientId" id="clientId"></select></p>
+      <p><label for="clientName">Naam: </label><input type="text" id="clientName"></p>
+      <p><label for="tariff">Lestarief: </label><input name="tariff" id="tariff" class="float">
+        <label for="tariff">Omschrijving: </label><input name="invoiceDescription" id="invoiceDescription">
       </p>
       <div id="lessonData">
+      </div>  
+      <h3>Totalen</h3>
+      <div class="totals">
+        <span class="hdr">BTW groep</span><span class="hdr">Omschrijving</span><span class="hdr flt">Totaal excl.</span><span class="hdr flt">BTW totaal</span><span class="hdr flt">Totaal incl.</span>
       </div>
       <p class="buttons"><button class="showInvoice">Toon factuur</button><button class="showSpecs">Toon specificaties</button></p>
-      <h3>Totalen</h3>
-      <div id="totals">
-        <!-- totaallines: BTW group resume totaal-excl. totaal-BTW totaal-incl.-->
-
-      </div>
-      <div class="totalsContentTemplate"><span class="vat-des">BTW groep</span><span class="vat-resume">Service</span><span class="vat-excl">Totaal excl.</span><span class="vat-amount">BTW totaal</span><span class="vat-incl">Totaal incl.</span></div>
-      <button id="test">calculate</button>
     </section>
     <section id="sectionInvoice">
       <p class="buttons"><button class="printPage">Print factuur</button><button class="showSpecs">Toon Specificaties</button><button class="showInput">Naar invoer</button></p>
-      <h1>Factuur</h1>
-      factuur-div
-       
+      <h3>Factuur</h3>
+      <div class="invoiceHeader">
+        <div class="invoiceHeaderLeft"></div>
+        <div class="invoiceHeaderRight"></div>
+        <div class="invoiceDate"><label for="">Datum: </label><span></span></div>
+        <div class="invoiceNr"><label for="">Factuurnummer: </label><span></span></div>
+      </div>
+      <hr>
+      <div class="invoiceDetails">Hier komt de feitelijke specificatie</div>
+      <h3>Totalen:</h3>
+      <div class="totals">
+        <span class="hdr">BTW groep</span><span class="hdr">Omschrijving</span><span class="hdr flt">Totaal excl.</span><span class="hdr flt">BTW totaal</span><span class="hdr flt">Totaal incl.</span>
+      </div>
+      <div class="invoiceFooter"></div> 
       <!-- factuur layout-->
     </section>
     <section id="sectionSpecs">
@@ -41,14 +54,18 @@
     </section>
 
     <div class="lessonDateTemplate">
-      <label for="">datum: </label><input type="date"> <button class="createLessonDate">Voeg datum toe</button>
-      <p>
+      <input class="spec" type="date"> <button class="createLessonDate">Voeg datum toe</button> <button class="removeLessonDate">Verwijder</button>
+      <p class="lessons">
         <span data-vat="1" class="duration">
-          <label>onder 21: </label><input class="int minutes" maxlength="3"> <label> minuten: </label><span class="hours">...</span><label> uur</label>
+          <label>zangles onder 21:</label>
+          <input class="int minutes" maxlength="4"> <label> minuten</label>
+          <input class="float hours" maxlength="4"><label> uur</label><label> lessen</label>
         </span>
-        &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp;
         <span data-vat="0" class="duration">
-          <label>vanaf 21: </label><input class="int minutes" maxlength="3"> <label> minuten: </label><span class="hours">...</span><label> uur</label>  
+          <label>zangles vanaf 21:</label>
+          <input class="int minutes" maxlength="4"><label> minuten</label>
+          <input class="float hours" maxlength="4"><label> uur</label><label> lessen</label>
         </span>
       </p>
       <p>
@@ -57,13 +74,17 @@
       <p class="services"></p>
     </div>
     <div class="serviceTemplate">
-      <label for="">Service: </label><input type="text" class="description">
+      <label for="">Service: </label>
+      <select name="" id="" class="serviceType"></select>
+      <textarea class="description"></textarea>
+      <label for="">aantal: </label><input class="int amount" >
+      <select name="" id="" class="unit"></select>
       <label for="">tarief: </label><input class="float tariff" >
       <label for="">BTW: </label>
-      <select class="vat">
-      </select>
+      <select class="vat"></select>
       <button class="removeService">Verwijder</button> 
     </div>
+    <script src="data.js" ></script>
     <script src="invoice.js" ></script>
   </body>
 </html>
